@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header class="header">
+  Test Task <button (click)="basketSwitcher()" type="button" class="btn btn-outline-warning">My basket</button>
+</header>
+
+<div *ngIf="basket" class="basket">
+  <div *ngFor="let product of products">
+    <div *ngIf="product.in_potential_products">{{product.name | slice:0:20}} : <b>{{product.price}}</b></div>
+  </div>
+    <b> Total: {{ getTotal() | slice:0:5}}</b>
+</div>
+
+<div class="container">
+  <div *ngFor="let product of products" [ngStyle]="{
+      'display': 'inline-block'
+    }">
+
+    <div class="card col">
+      <img class="card-img-top" src={{product.img}} alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">{{product.price}} {{product.currency}}</h4>
+        <h6 class="card-title">{{product.name | slice:0:30}}...</h6>
+        <p class="card-text">{{product.bsr_category}}</p>
+        <a href={{product.link}} class="btn btn-outline-secondary">Link</a>
+        <button *ngIf="!product.in_potential_products" (click)="switcher(product)" type="button" class="btn btn-outline-success">Add</button>
+        <button *ngIf="product.in_potential_products" (click)="switcher(product)" type="button" class="btn btn-outline-danger">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
