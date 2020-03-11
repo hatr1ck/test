@@ -1,17 +1,18 @@
-
+$main-color: #30436b;
 .header{
-  background-color: #30436b;
+  background-color: $main-color;
   color: white;
   height: 60px;
   font-family: "Times New Roman", Times, serif;
   font-size: 30px;
   padding: 10px;
   margin-bottom: 10px;
-}
-.btn-outline-warning{
-  float: right;
-  font-size: 20px;
-  margin-right: 20px;
+
+  .btn-outline-warning{
+    float: right;
+    font-size: 20px;
+    margin-right: 20px;
+  }
 }
 .basket {
     font-family: "Times New Roman", Times, serif;
@@ -23,30 +24,31 @@
     z-index: 1;
     right: 30px;
     padding: 20px;
-    border:.5px solid #30436b;
+    border:.5px solid $main-color;
     border-radius: 3%;
   }
 .container{
   padding: 0;
-}
+  text-align: center;
 
-.card {
-  width: 230px;
-  height: 400px;
-  margin: 5px;
-  cursor: pointer;
-  box-shadow: 1px solid black;
+  .card {
+    width: 230px;
+    height: 400px;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 1px solid black;
 
-}
-
-  .card-text{
-    font-size: 12px;
-  }
-
-  .card:hover {
-        box-shadow: 0px 0px 28px -1px rgba(85,97,142,1);
+    .card-text{
+      font-size: 12px;
     }
-.card-img-top{
-    width: 200px;
-    height: 200px;
+
+    .card-img-top{
+        width: 200px;
+        height: 200px;
+    }
+
+    &:hover {
+            box-shadow: 0px 0px 28px -1px rgba(85,97,142,1);
+    }
+  }
 }
